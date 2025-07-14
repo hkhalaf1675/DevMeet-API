@@ -26,6 +26,10 @@ app.use(express.json());
 //#region Routes
 import welcomeRoute from './routes/index.route'; 
 app.use('/api', welcomeRoute);
+
+// auth routes 
+import authRoutes from './routes/auth.route';
+app.use('/api/auth', authRoutes);
 //#endregion
 
 //#region handle routes
