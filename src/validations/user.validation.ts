@@ -7,3 +7,8 @@ export const registerSchema = Joi.object({
     nationality: Joi.string().optional(),
     spokenLanguages: Joi.array().items(Joi.string()).optional()
 });
+
+export const loginSchema = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().required()
+});

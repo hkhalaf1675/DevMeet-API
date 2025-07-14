@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { register } from "../controllers/users.controller";
+import { login, register } from "../controllers/users.controller";
 import { validate } from "../utils/joi";
-import { registerSchema } from "../validations/user.validation";
+import { loginSchema, registerSchema } from "../validations/user.validation";
 
 const router = Router();
 
-//#region register user
 router.post('/register', validate(registerSchema), register);
-//#endregion
+
+router.post('/login', validate(loginSchema), login);
 
 export default router;
