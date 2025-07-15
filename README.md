@@ -22,7 +22,7 @@ and conflict‑free booking logic.
 - Request & accept sessions
 - Time‑zone aware matching
 
-## 🛠️ Installation
+## Installation
 ### Prerequisites
 Before installing, ensure you have the following:
 - [Node.js](https://nodejs.org/) (v16 or higher recommended)
@@ -52,7 +52,7 @@ npm run build
 npm start
 ```
 
-## 🌐 API Endpoints Overview
+## API Endpoints Overview
 
 ### 🔐 Authentication & Users
 
