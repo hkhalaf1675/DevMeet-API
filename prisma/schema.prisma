@@ -14,20 +14,41 @@ datasource db {
 }
 
 model ErrorLogs {
-  id Int @id @default(autoincrement())
-  error Json
-  position Int @default(0)
+  id        Int      @id @default(autoincrement())
+  error     Json
+  position  Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  name String
-  email String @unique
-  password String
-  nationality String?
+  id              Int      @id @default(autoincrement())
+  name            String
+  email           String   @unique
+  password        String
+  nationality     String?
   spokenLanguages String[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  slots           Slot[]   @relation("mentorSlots")
+}
+
+model Slot {
+  id          Int        @id @default(autoincrement())
+  topic       String
+  description String?
+  status      SlotStatus @default(AVAILABLE)
+  location    String? // e.g., "Online", "In-person", "Zoom", etc.
+  startTime   DateTime
+  endTime     DateTime
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  mentorId    Int
+  mentor      User       @relation("mentorSlots", fields: [mentorId], references: [id])
+}
+
+enum SlotStatus {
+  AVAILABLE
+  BOOKED
+  CANCELLED
 }

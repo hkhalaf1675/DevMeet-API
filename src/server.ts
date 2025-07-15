@@ -1,8 +1,8 @@
-import * as express from 'express';
-import * as cors from 'cors';
+import express from 'express';
+import cors from 'cors';
 import { CorsOptions } from 'cors';
-const helmet = require('helmet');
-const morgan = require('morgan');
+import helmet from 'helmet';
+import morgan from 'morgan';
 import appConfig from './config/app.config';
 import globalErrorHandler from './middlewares/global-error-handler.middleware';
 
@@ -34,6 +34,10 @@ app.use('/api/auth', authRoutes);
 // user routes
 import userRoutes from './routes/user.routes';
 app.use('/api/users', userRoutes);
+
+// slot routes
+import slotRoutes from './routes/slot.routes';
+app.use('/api/slots', slotRoutes);
 //#endregion
 
 //#region handle routes
