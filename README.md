@@ -8,7 +8,7 @@ and conflict‑free booking logic.
 - [Stack](#stack)
 - [Features](#features)
 - [Installation](#installation)
-- [API Endpoints Overview](#APIEndpointsOverview)
+- [API Endpoints Overview](#api-endpoints)
 
 ## Stack
 - Node.js + Express
