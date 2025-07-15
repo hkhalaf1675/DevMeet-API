@@ -22,15 +22,16 @@ model ErrorLogs {
 }
 
 model User {
-  id              Int      @id @default(autoincrement())
+  id              Int       @id @default(autoincrement())
   name            String
-  email           String   @unique
+  email           String    @unique
   password        String
   nationality     String?
   spokenLanguages String[]
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  slots           Slot[]   @relation("mentorSlots")
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  slots           Slot[]    @relation("mentorSlots")
+  requests        Request[] @relation("requests")
 }
 
 model Slot {
@@ -45,10 +46,29 @@ model Slot {
   updatedAt   DateTime   @updatedAt
   mentorId    Int
   mentor      User       @relation("mentorSlots", fields: [mentorId], references: [id])
+  requests    Request[]  @relation("slotRequests")
+}
+
+model Request {
+  id          Int           @id @default(autoincrement())
+  status      RequestStatus @default(PENDING)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  developerId Int
+  developer   User          @relation("requests", fields: [developerId], references: [id])
+  slotId      Int
+  slot        Slot          @relation("slotRequests", fields: [slotId], references: [id])
 }
 
 enum SlotStatus {
   AVAILABLE
   BOOKED
   CANCELLED
+}
+
+enum RequestStatus {
+  PENDING
+  ACCEPTED
+  CANCELLED
+  DECLINED
 }

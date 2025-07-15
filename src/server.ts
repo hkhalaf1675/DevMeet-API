@@ -38,6 +38,10 @@ app.use('/api/users', userRoutes);
 // slot routes
 import slotRoutes from './routes/slot.routes';
 app.use('/api/slots', slotRoutes);
+
+// request routes 
+import requestRoutes from './routes/request.routes';
+app.use('/api/requests', requestRoutes);
 //#endregion
 
 //#region handle routes

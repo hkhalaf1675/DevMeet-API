@@ -32,7 +32,7 @@ export const createSlot = async(req: Request, res: Response) => {
     })
 }
 
-export const getOneSlot = async(req: Request, res: Response) => {
+export const getSLotById = async(req: Request, res: Response) => {
     const slotId = +req.params.id;
 
     const slot = await prisma.slot.findUnique({
@@ -101,7 +101,9 @@ export const getManySlots = async(req: Request, res: Response) => {
             select: {
                 id: true,
                 name: true,
-                email: true
+                email: true,
+                nationality: true,
+                spokenLanguages: true
             }
         }
     };

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { cancelSlot, createSlot, getManySlots, getMySlots, getOneSlot, updateSlot } from "../controllers/slots.controller";
+import { cancelSlot, createSlot, getManySlots, getMySlots, getSLotById, updateSlot } from "../controllers/slots.controller";
 import { validate } from "../utils/joi";
 import { createSlotSchema, updateSlotSchema } from "../validations/slot.validation";
 import { authGuard } from "../middlewares/auth.guard";
@@ -13,7 +13,7 @@ router.get('/me', getMySlots);
 
 router.get('/', getManySlots);
 
-router.get('/:id', getOneSlot);
+router.get('/:id', getSLotById);
 
 router.put('/:id', validate(updateSlotSchema), updateSlot);
 
