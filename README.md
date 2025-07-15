@@ -52,7 +52,7 @@ npm run build
 npm start
 ```
 
-## API Endpoints Overview
+## API Endpoints Overview <a name="api-endpoints"></a>
 
 ### 🔐 Authentication & Users
 
