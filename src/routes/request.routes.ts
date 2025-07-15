@@ -11,7 +11,7 @@ router.post('/add-request', validate(createRequestSchema), createRequest);
 
 router.get('/my-requests', getMyRequests);
 
-router.get('/upcoming-slots-requests', getUpcomingSlotRequests);
+router.get('/upcoming-slot-requests', getUpcomingSlotRequests);
 
 router.get('/:id', getRequestById);
 
