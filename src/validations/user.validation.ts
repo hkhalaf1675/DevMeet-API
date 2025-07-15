@@ -12,3 +12,13 @@ export const loginSchema = Joi.object({
     email: Joi.string().email().required(),
     password: Joi.string().required()
 });
+
+export const updateProfileSchema = Joi.object({
+    name: Joi.string().optional(),
+    nationality: Joi.string().optional(),
+    spokenLanguages: Joi.array().items(Joi.string()).optional()
+});
+
+export const userPassword = Joi.object({
+    password: Joi.string().required()
+});

@@ -28,8 +28,12 @@ import welcomeRoute from './routes/index.route';
 app.use('/api', welcomeRoute);
 
 // auth routes 
-import authRoutes from './routes/auth.route';
+import authRoutes from './routes/auth.routes';
 app.use('/api/auth', authRoutes);
+
+// user routes
+import userRoutes from './routes/user.routes';
+app.use('/api/users', userRoutes);
 //#endregion
 
 //#region handle routes
