@@ -56,13 +56,13 @@ npm start
 
 ### 🔐 Authentication & Users
 
-| Endpoint              | Method | Description                          | Auth Required |
-|-----------------------|--------|--------------------------------------|---------------|
-| `/api/auth/register` | POST   | Register new user                    | No            |
-| `/api/auth/login`    | POST   | Login existing user                  | No            |
-| `/api/users/my-profile`       | GET    | Get current user profile             | Yes           |
-| `/api/users`          | GET    | Get all users (admin only)           | Yes  |
-| `/api/users/update`      | PUT  | Update user profile                  | Yes           |
+| Endpoint               | Method | Description                          | Auth Required |
+|------------------------|--------|--------------------------------------|---------------|
+| `/api/auth/register`   | POST   | Register new user                    | No            |
+| `/api/auth/login`      | POST   | Login existing user                  | No            |
+| `/api/users/my-profile`| GET    | Get current user profile             | Yes           |
+| `/api/users`           | GET    | Get all users                        | Yes           |
+| `/api/users/update`    | PUT    | Update user profile                  | Yes           |
 
 ### 📅 Slots Management
 
